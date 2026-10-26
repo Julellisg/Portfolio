@@ -1,2 +1,41 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
+
+/* Define global CSS variables */
+:root {
+    --primary-color: #3b363f;
+    --content-color: #2f2b32;
+    --text-color: #e2d1d3;
+    --text-sub-color: lab(85.24% 6.22 1.13 / 0.75);
+    --accent-color: hsla(342, 4%, 51%, 0.404);
+}
+
+body {
+    font-family: Roboto, sans-serif;
+    /* font-family: "Open Sans", sans-serif; */
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+
+.portfolio-container {
+    @apply mx-auto p-20 my-4 rounded-3xl drop-shadow-2xl;
+    border: 1px solid var(--accent-color);
+    background-color: var(--content-color);
+    max-width: 50%;
+    /* Use only if we want to avoid scrolling entirely: min-height: calc(100vh - 2rem); */
+    min-height: calc(100vh); /* Keeps container within view */
+}
+
+h1 {
+    @apply mb-4;
+}
+
+.portfolio-container h2 {
+    @apply text-[22px] font-semibold mb-2;
+}
+
+hr {
+    @apply mb-4 rounded-full;
+    border: 1.5px solid var(--accent-color);
+}
