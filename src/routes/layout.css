@@ -1,5 +1,4 @@
 @import 'tailwindcss';
-@plugin '@tailwindcss/typography';
 
 /* Define global CSS variables */
 :root {
@@ -12,49 +11,54 @@
 
 body {
     font-family: Roboto, sans-serif;
-    /* font-family: "Open Sans", sans-serif; */
     background-color: var(--primary-color);
     color: var(--text-color);
 }
 
 .portfolio-container {
-    @apply mx-auto p-20 my-4 rounded-3xl drop-shadow-2xl;
+    @apply mx-auto my-4 max-w-[50%] min-h-screen rounded-3xl p-20 drop-shadow-2xl;
     border: 1px solid var(--accent-color);
     background-color: var(--content-color);
-    max-width: 50%;
-    /* Use only if we want to avoid scrolling entirely: min-height: calc(100vh - 2rem); */
-    min-height: calc(100vh); /* Keeps container within view */
 }
 
 .project-container {
     @apply grid grid-cols-2 gap-4;
 }
 
-#project-card {
-    @apply flex h-72 flex-col overflow-hidden rounded-2xl border border-[var(--accent-color)] drop-shadow-2xl;
-    height: 430px;
+.project-card {
+    @apply flex h-[430px] flex-col overflow-hidden rounded-2xl border border-(--accent-color) drop-shadow-2xl;
 }
 
-#project-card img {
-    /* 380*30% = 114px */
+.project-card img {
     @apply h-[30%] w-full shrink-0 object-cover object-center;
 }
 
-#project-card h3 {
-    @apply font-semibold text-base mb-2;
+.project-card h3 {
+    @apply mb-2 text-base font-semibold;
 }
 
-/* Description of projects */
-#project-card p {
-    @apply text-[15px] text-[var(--text-sub-color)];
-} 
+.project-card p {
+    @apply text-[15px] text-(--text-sub-color);
+}
 
-#card-text {
-    @apply shrink-0 p-4;
+.card-text {
+    @apply flex min-h-0 flex-1 flex-col p-4;
+}
+
+.tags {
+    @apply flex shrink-0 flex-wrap gap-2 font-mono;
 }
 
 .tags span {
-    @apply rounded-lg font-bold text-xs border border-(--text-sub-color) px-2 py-1;
+    @apply rounded-lg border border-(--text-sub-color) px-2 py-1 text-xs font-bold;
+}
+
+.btn-primary {
+    @apply flex-1 rounded-lg border border-(--text-color) bg-(--text-color) py-2 text-center text-(--content-color) transition-opacity hover:opacity-90;
+}
+
+.btn-secondary {
+    @apply flex-1 rounded-lg border border-(--text-color) py-2 text-center transition-colors hover:bg-(--text-color) hover:text-(--content-color);
 }
 
 h1 {
@@ -62,7 +66,7 @@ h1 {
 }
 
 .portfolio-container h2 {
-    @apply text-[22px] font-semibold mb-2;
+    @apply mb-2 text-[22px] font-semibold;
 }
 
 hr {
