@@ -8,6 +8,8 @@
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
+	<title>Julian Ellis Geronimo</title>
+	<meta name="description" content="Web developer and generalist who learns by building—from clones to new ideas. Passionate about the web and using AI to build faster." />
 </svelte:head>
 
 {@render children()}
