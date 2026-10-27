@@ -1,75 +1,119 @@
 @import 'tailwindcss';
 
-/* Define global CSS variables */
+/* ==========================================================================
+   Global Theme & Color Variables
+   ========================================================================== */
 :root {
+    /* Background for the entire browser viewport */
     --primary-color: #3b363f;
+
+    /* Background for the central portfolio card/sheet */
     --content-color: #2f2b32;
+
+    /* Primary text color (headings, titles, active button text) */
     --text-color: #e2d1d3;
+
+    /* Subdued text color for body paragraphs, dates, and secondary labels */
     --text-sub-color: lab(85.24% 6.22 1.13 / 0.75);
+
+    /* Subtle border & divider line color (card borders, <hr> lines) */
     --accent-color: hsla(342, 4%, 51%, 0.404);
 }
 
+/* ==========================================================================
+   Base & Body Setup
+   ========================================================================== */
 body {
     font-family: Roboto, sans-serif;
     background-color: var(--primary-color);
     color: var(--text-color);
 }
 
+/* ==========================================================================
+   Main Portfolio Container (Central Resume Paper Layout)
+   ========================================================================== */
 .portfolio-container {
-    @apply mx-auto my-4 max-w-[50%] min-h-screen rounded-3xl p-20 drop-shadow-2xl;
+    /* Centered horizontally, 50% max-width on desktop, full min-height, flex-col to stick footer to bottom */
+    @apply mx-auto my-4 flex min-h-screen max-w-[50%] flex-col rounded-3xl px-20 pt-20 pb-6 drop-shadow-2xl;
     border: 1px solid var(--accent-color);
     background-color: var(--content-color);
 }
 
-.project-container {
-    @apply grid grid-cols-2 gap-4;
-}
-
-.project-card {
-    @apply flex h-[430px] flex-col overflow-hidden rounded-2xl border border-(--accent-color) drop-shadow-2xl;
-}
-
-.project-card img {
-    @apply h-[30%] w-full shrink-0 object-cover object-center;
-}
-
-.project-card h3 {
-    @apply mb-2 text-base font-semibold;
-}
-
-.project-card p {
-    @apply text-[15px] text-(--text-sub-color);
-}
-
-.card-text {
-    @apply flex min-h-0 flex-1 flex-col p-4;
-}
-
-.tags {
-    @apply flex shrink-0 flex-wrap gap-2 font-mono;
-}
-
-.tags span {
-    @apply rounded-lg border border-(--text-sub-color) px-2 py-1 text-xs font-bold;
-}
-
-.btn-primary {
-    @apply flex-1 rounded-lg border border-(--text-color) bg-(--text-color) py-2 text-center text-(--content-color) transition-opacity hover:opacity-90;
-}
-
-.btn-secondary {
-    @apply flex-1 rounded-lg border border-(--text-color) py-2 text-center transition-colors hover:bg-(--text-color) hover:text-(--content-color);
-}
-
+/* ==========================================================================
+   Global Typography & Section Dividers
+   ========================================================================== */
+/* Main page name header (e.g. Julian Ellis Geronimo) */
 h1 {
     @apply mb-4;
 }
 
+/* Section titles (e.g. ABOUT, EDUCATION, TECHNICAL SKILLS, PROJECTS) */
 .portfolio-container h2 {
     @apply mb-2 text-[22px] font-semibold;
 }
 
+/* Horizontal rule divider between sections */
 hr {
     @apply mb-4 rounded-full;
     border: 1.5px solid var(--accent-color);
+}
+
+/* ==========================================================================
+   Skills & Project Tags (Pill Badges)
+   Used in both the Technical Skills grid and Project cards
+   ========================================================================== */
+.tags {
+    /* Flex container wrapping tag badges with a monospace font */
+    @apply flex shrink-0 flex-wrap gap-2 font-mono;
+}
+
+.tags span {
+    /* Individual pill badge with border and subtle padding */
+    @apply rounded-lg border border-(--text-sub-color) px-2 py-1 text-xs font-bold;
+}
+
+/* ==========================================================================
+   Projects Section
+   ========================================================================== */
+/* 2-column grid holding all featured project cards */
+.project-container {
+    @apply grid grid-cols-2 gap-4;
+}
+
+/* Individual project card container */
+.project-card {
+    @apply flex h-[430px] flex-col overflow-hidden rounded-2xl border border-(--accent-color) drop-shadow-2xl;
+}
+
+/* Thumbnail preview image at the top of each project card */
+.project-card img {
+    @apply h-[30%] w-full shrink-0 object-cover object-center;
+}
+
+/* Title of the project */
+.project-card h3 {
+    @apply mb-2 text-base font-semibold;
+}
+
+/* Project description text */
+.project-card p {
+    @apply text-[15px] text-(--text-sub-color);
+}
+
+/* Card body containing title, divider line, and description */
+.card-text {
+    @apply flex min-h-0 flex-1 flex-col p-4;
+}
+
+/* ==========================================================================
+   Action Buttons (Project Card Links)
+   ========================================================================== */
+/* Filled primary button (e.g. "GitHub Repo") */
+.btn-primary {
+    @apply flex-1 rounded-lg border border-(--text-color) bg-(--text-color) py-2 text-center text-(--content-color) transition-opacity hover:opacity-90;
+}
+
+/* Outlined secondary button (e.g. "Try it out!", "Demonstration", "Back to Top") */
+.btn-secondary {
+    @apply flex-1 rounded-lg border border-(--text-color) py-2 text-center transition-colors hover:bg-(--text-color) hover:text-(--content-color);
 }

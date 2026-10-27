@@ -2,6 +2,7 @@
     import schoolImage from '#lib/assets/brocku-logo.png';
     import pfp1 from '#lib/assets/pfp1.png';
     import pfp2 from '#lib/assets/pfp2.png';
+    import resume from '#lib/assets/resume.pdf';
 
     // Project Logos
     import previewBP2E from '#lib/assets/previewBP2E.png';
@@ -150,7 +151,7 @@
     <!-- Social & Quick Links -->
     <div class="my-6 flex items-center justify-center gap-6 text-(--text-color)">
         <a
-            href="/resume.pdf"
+            href={resume}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Resume"
@@ -217,7 +218,6 @@
             </svg>
         </a>
     </div>
-    <hr />
 
     <!-- Education -->
     <h2>EDUCATION</h2>
@@ -260,7 +260,8 @@
             <span>Java</span>
             <span>Python</span>
             <span>C++</span>
-            <span>JavaScript/TypeScript</span>
+            <span>JavaScript</span>
+            <span>TypeScript</span>
             <span>HTML</span>
             <span>CSS</span>
             <span>SQL</span>
@@ -349,7 +350,14 @@
     <!-- Contact -->
     <h2>CONTACT</h2>
     <hr />
-    <div></div>
+    <p class="text-base text-(--text-sub-color)">
+        For all inquiries, please contact me via my
+        <a href="mailto:julianellisg@gmail.com"
+            class="underline font-bold text-(--text-color)">
+            julianellisg@gmail.com
+        </a>
+        and I will respond as soon as possible.
+    </p>
 
-    <footer class="mt-4 py-4 text-center">© 2026 Julian Ellis Geronimo</footer>
+    <footer class="mt-auto pt-8 text-center">© 2026 Julian Ellis Geronimo</footer>
 </div>
