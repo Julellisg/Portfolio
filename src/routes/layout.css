@@ -32,12 +32,12 @@ body {
 
 #project-card {
     @apply flex h-72 flex-col overflow-hidden rounded-2xl border border-[var(--accent-color)] drop-shadow-2xl;
-    height: 400px;
+    height: 430px;
 }
 
 #project-card img {
     /* 380*30% = 114px */
-    @apply h-[35%] w-full shrink-0 object-cover object-center;
+    @apply h-[30%] w-full shrink-0 object-cover object-center;
 }
 
 #project-card h3 {
@@ -51,6 +51,10 @@ body {
 
 #card-text {
     @apply shrink-0 p-4;
+}
+
+.tags span {
+    @apply rounded-lg font-bold text-xs border border-(--text-sub-color) px-2 py-1;
 }
 
 h1 {
