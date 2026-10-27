@@ -105,10 +105,10 @@
 
 <div id="top" class="portfolio-container">
     <!-- About Me -->
-    <div class="grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_14rem] gap-6">
+    <div class="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-6 md:items-stretch">
         <!-- Left Half  -->
         <div class="flex-1">
-            <h1 class="text-[38px] font-extrabold">JULIAN ELLIS GERONIMO</h1>
+            <h1 class="font-extrabold leading-tight">JULIAN ELLIS GERONIMO</h1>
             <h2>ABOUT</h2>
             <hr />
             <p class="text-base text-(--text-sub-color)">
@@ -120,14 +120,14 @@
             </p>
         </div>
         <!-- Right Half -->
-        <div>
+        <div class="mx-auto md:mx-0 w-40 sm:w-48 md:w-auto md:h-full flex flex-col items-center justify-center">
             <button
                 type="button"
                 aria-label={showFirstPortrait
                     ? 'Show second portrait'
                     : 'Show first portrait'}
                 onclick={() => (showFirstPortrait = !showFirstPortrait)}
-                class="relative aspect-square w-full self-start overflow-hidden rounded-2xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current"
+                class="group relative aspect-square w-full md:w-auto md:h-full overflow-hidden rounded-2xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current"
             >
                 <img
                     src={pfp1}
@@ -143,8 +143,12 @@
                     class="portrait-image absolute inset-0 h-full w-full object-cover drop-shadow-2xl transition-opacity duration-300 ease-in-out"
                     style:opacity={showFirstPortrait ? 0 : 1}
                 />
+                <span
+                    class="absolute bottom-2 right-2 rounded-md bg-black/50 px-1.5 py-0.5 text-xs text-white/90 backdrop-blur-sm transition-opacity group-hover:bg-black/70"
+                >
+                    ⇄
+                </span>
             </button>
-            <p class="text-center text-lg italic text-(--text-sub-color)">⇄</p>
         </div>
     </div>
 
@@ -222,12 +226,12 @@
     <!-- Education -->
     <h2>EDUCATION</h2>
     <hr />
-    <div class="mb-6 grid grid-cols-[60px_minmax(0,1fr)] gap-4 pb-4">
+    <div class="mb-6 grid grid-cols-[48px_minmax(0,1fr)] sm:grid-cols-[60px_minmax(0,1fr)] gap-3 sm:gap-4 pb-4">
         <a
             href="https://brocku.ca/"
             target="_blank"
             rel="noopener noreferrer"
-            class="h-[60px] w-[60px]"
+            class="h-12 w-12 sm:h-[60px] sm:w-[60px] shrink-0"
         >
             <img
                 src={schoolImage}
@@ -236,15 +240,15 @@
             />
         </a>
         <div class="min-w-0">
-            <div class="flex flex-wrap items-baseline justify-between gap-x-4">
-                <h3 class="font-semibold">Brock University</h3>
-                <span class="ml-auto text-right">St. Catharines, Ontario</span>
+            <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-x-4">
+                <h3 class="font-semibold text-base sm:text-lg">Brock University</h3>
+                <span class="text-xs sm:text-sm text-(--text-sub-color) sm:text-right">St. Catharines, Ontario</span>
             </div>
-            <div class="mt-1 flex flex-wrap items-baseline justify-between gap-x-4">
-                <p class="text-(--text-sub-color)">
+            <div class="mt-1 flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-x-4">
+                <p class="text-xs sm:text-sm md:text-base text-(--text-sub-color)">
                     Bachelor of Science (Honours) - BS, Computer Science
                 </p>
-                <span class="ml-auto text-right text-(--text-sub-color)">
+                <span class="text-xs sm:text-sm text-(--text-sub-color) sm:text-right">
                     Sep 2019 - April 2024
                 </span>
             </div>
@@ -254,7 +258,7 @@
     <!-- Technical Skills -->
     <h2>TECHNICAL SKILLS</h2>
     <hr />
-    <div class="mb-6 grid grid-cols-[max-content_1fr] items-start gap-x-6 gap-y-3">
+    <div class="mb-6 grid grid-cols-1 sm:grid-cols-[max-content_1fr] items-start gap-x-6 gap-y-3">
         <span class="flex h-[26px] items-center font-bold">Languages:</span>
         <div class="tags">
             <span>Java</span>

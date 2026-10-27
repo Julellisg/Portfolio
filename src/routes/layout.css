@@ -1,3 +1,6 @@
+/* ==========================================================================
+   Tailwind Framework Import
+   ========================================================================== */
 @import 'tailwindcss';
 
 /* ==========================================================================
@@ -33,8 +36,9 @@ body {
    Main Portfolio Container (Central Resume Paper Layout)
    ========================================================================== */
 .portfolio-container {
-    /* Centered horizontally, 50% max-width on desktop, full min-height, flex-col to stick footer to bottom */
-    @apply mx-auto my-4 flex min-h-screen max-w-[50%] flex-col rounded-3xl px-20 pt-20 pb-6 drop-shadow-2xl;
+    /* Responsive width: keeps comfortable reading width across devices and caps gracefully on large monitors */
+    @apply mx-auto my-3 sm:my-4 flex min-h-screen w-[94%] sm:w-[90%] md:w-[85%] lg:w-[78%] xl:w-[65%] 2xl:max-w-[1020px] flex-col rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-12 lg:p-14 drop-shadow-2xl;
+    min-width: min(100%, 340px);
     border: 1px solid var(--accent-color);
     background-color: var(--content-color);
 }
@@ -44,12 +48,12 @@ body {
    ========================================================================== */
 /* Main page name header (e.g. Julian Ellis Geronimo) */
 h1 {
-    @apply mb-4;
+    @apply mb-4 text-2xl sm:text-3xl md:text-[38px] font-extrabold leading-tight;
 }
 
 /* Section titles (e.g. ABOUT, EDUCATION, TECHNICAL SKILLS, PROJECTS) */
 .portfolio-container h2 {
-    @apply mb-2 text-[22px] font-semibold;
+    @apply mb-2 text-lg sm:text-[22px] font-semibold;
 }
 
 /* Horizontal rule divider between sections */
@@ -64,30 +68,31 @@ hr {
    ========================================================================== */
 .tags {
     /* Flex container wrapping tag badges with a monospace font */
-    @apply flex shrink-0 flex-wrap gap-2 font-mono;
+    @apply flex shrink-0 flex-wrap gap-1.5 sm:gap-2 font-mono;
 }
 
 .tags span {
     /* Individual pill badge with border and subtle padding */
-    @apply rounded-lg border border-(--text-sub-color) px-2 py-1 text-xs font-bold;
+    @apply rounded-lg border border-(--text-sub-color) px-2 py-0.5 sm:py-1 text-[11px] sm:text-xs font-bold;
 }
 
 /* ==========================================================================
    Projects Section
    ========================================================================== */
-/* 2-column grid holding all featured project cards */
+/* Auto-fit grid: cards will NEVER squeeze below 310px; they drop to 1 column automatically if space is tight */
 .project-container {
-    @apply grid grid-cols-2 gap-4;
+    @apply grid gap-5 sm:gap-6;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 310px), 1fr));
 }
 
 /* Individual project card container */
 .project-card {
-    @apply flex h-[430px] flex-col overflow-hidden rounded-2xl border border-(--accent-color) drop-shadow-2xl;
+    @apply flex min-h-[420px] flex-col justify-between overflow-hidden rounded-2xl border border-(--accent-color) drop-shadow-2xl;
 }
 
 /* Thumbnail preview image at the top of each project card */
 .project-card img {
-    @apply h-[30%] w-full shrink-0 object-cover object-center;
+    @apply h-48 sm:h-40 md:h-36 w-full shrink-0 object-cover object-center;
 }
 
 /* Title of the project */
@@ -97,7 +102,7 @@ hr {
 
 /* Project description text */
 .project-card p {
-    @apply text-[15px] text-(--text-sub-color);
+    @apply text-sm sm:text-[15px] text-(--text-sub-color);
 }
 
 /* Card body containing title, divider line, and description */
@@ -110,10 +115,10 @@ hr {
    ========================================================================== */
 /* Filled primary button (e.g. "GitHub Repo") */
 .btn-primary {
-    @apply flex-1 rounded-lg border border-(--text-color) bg-(--text-color) py-2 text-center text-(--content-color) transition-opacity hover:opacity-90;
+    @apply flex-1 whitespace-nowrap rounded-lg border border-(--text-color) bg-(--text-color) py-2 px-2 text-center text-xs sm:text-sm font-medium text-(--content-color) transition-opacity hover:opacity-90;
 }
 
 /* Outlined secondary button (e.g. "Try it out!", "Demonstration", "Back to Top") */
 .btn-secondary {
-    @apply flex-1 rounded-lg border border-(--text-color) py-2 text-center transition-colors hover:bg-(--text-color) hover:text-(--content-color);
+    @apply flex-1 whitespace-nowrap rounded-lg border border-(--text-color) py-2 px-2 text-center text-xs sm:text-sm font-medium transition-colors hover:bg-(--text-color) hover:text-(--content-color);
 }
