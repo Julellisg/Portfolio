@@ -29,6 +29,11 @@
 body {
     font-family: Roboto, sans-serif;
     background-color: var(--primary-color);
+    background-image: url('../lib/assets/bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     color: var(--text-color);
 }
 
@@ -37,7 +42,7 @@ body {
    ========================================================================== */
 .portfolio-container {
     /* Responsive width: keeps comfortable reading width across devices and caps gracefully on large monitors */
-    @apply mx-auto my-3 sm:my-4 flex min-h-screen w-[94%] sm:w-[90%] md:w-[85%] lg:w-[78%] xl:w-[65%] 2xl:max-w-[1020px] flex-col rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-12 lg:p-14 drop-shadow-2xl;
+    @apply mx-auto my-3 sm:my-4 flex min-h-screen w-[94%] sm:w-[90%] md:w-[85%] lg:w-[78%] xl:w-[65%] 2xl:max-w-[1020px] flex-col rounded-2xl sm:rounded-3xl px-5 pt-5 sm:px-8 sm:pt-8 md:px-12 md:pt-12 lg:px-14 lg:pt-14 pb-2 drop-shadow-2xl;
     min-width: min(100%, 340px);
     border: 1px solid var(--accent-color);
     background-color: var(--content-color);
@@ -97,7 +102,7 @@ hr {
 
 /* Title of the project */
 .project-card h3 {
-    @apply mb-2 text-base font-semibold;
+    @apply mb-2 text-lg font-semibold;
 }
 
 /* Project description text */
