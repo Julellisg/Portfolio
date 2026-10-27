@@ -17,7 +17,6 @@ body {
     color: var(--text-color);
 }
 
-
 .portfolio-container {
     @apply mx-auto p-20 my-4 rounded-3xl drop-shadow-2xl;
     border: 1px solid var(--accent-color);
@@ -25,6 +24,33 @@ body {
     max-width: 50%;
     /* Use only if we want to avoid scrolling entirely: min-height: calc(100vh - 2rem); */
     min-height: calc(100vh); /* Keeps container within view */
+}
+
+.project-container {
+    @apply grid grid-cols-2 gap-4;
+}
+
+#project-card {
+    @apply flex h-72 flex-col overflow-hidden rounded-2xl border border-[var(--accent-color)] drop-shadow-2xl;
+    height: 400px;
+}
+
+#project-card img {
+    /* 380*30% = 114px */
+    @apply h-[35%] w-full shrink-0 object-cover object-center;
+}
+
+#project-card h3 {
+    @apply font-semibold text-base mb-2;
+}
+
+/* Description of projects */
+#project-card p {
+    @apply text-[15px] text-[var(--text-sub-color)];
+} 
+
+#card-text {
+    @apply shrink-0 p-4;
 }
 
 h1 {

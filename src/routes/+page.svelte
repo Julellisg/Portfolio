@@ -3,11 +3,22 @@
     import schoolImage from '#lib/assets/brocku-logo.png';
     import pfp1 from '#lib/assets/pfp1.png';
     import pfp2 from '#lib/assets/pfp2.png';
+    import projectPlaceholder from '#lib/assets/project-placeholder.svg';
+
+    // Project Logos
+    import previewBP2E from '#lib/assets/previewBP2E.png';
+    import previewAndroidCalc from '#lib/assets/previewAndroidCalc.png';
+    import previewDiscord from '#lib/assets/previewDiscord.png';
+    import previewBITES from '#lib/assets/previewBITES.png';
+    import previewPomodoro from '#lib/assets/previewPomodoro.png';
+    import previewGradeCalc from '#lib/assets/previewGradeCalc.png';
+    import previewPortfolio from '#lib/assets/previewPortfolio.png';
 
     let showFirstPortrait = $state(true);
 </script>
 
 <div class="portfolio-container">
+    <!-- About Me -->
     <div class="grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_14rem] gap-6">
         <!-- Left Half  -->
         <div class="flex-1">
@@ -41,12 +52,12 @@
                     style:z-index={showFirstPortrait ? 0 : 1}
                 />
             </button>
-        <p class="text-center text-lg italic text-[var(--text-sub-color)]">⇄</p>
+        <p class="text-center text-lg italic text-(--text-sub-color)">⇄</p>
         </div>
     </div>
-    <br>
-    
+    <!-- <br> -->
 
+    <!-- Education -->
     <h2>EDUCATION</h2>
     <hr>
     <div class="grid grid-cols-[60px_minmax(0,1fr)] gap-4 pb-4">
@@ -75,30 +86,88 @@
     </div>
     <br>
 
-    <h2>PROJECTS</h2>
-    <hr>
-    <br>
-
+    <!-- Technical Skills -->
     <h2>TECHNICAL SKILLS</h2>
     <hr>
     <div>Languages / Frameworks: Java, HTML, CSS, JavaScript/TypeScript, Python, C++, SQL, SvelteKit, TailwindCSS, Bootstrap</div>
     <div>Tools: Android Studio, Figma, Firebase, Photoshop, Git, GitHub Desktop, Notion, PostgreSQL, Ubuntu</div>
+    <br>
+
+    <!-- Projects -->
+    <h2>PROJECTS</h2>
+    <hr>
+    <p class="mb-4">Here are a list of my featured projects. To see <em>all</em> my projects, visit my <a href="https://github.com/Julellisg?tab=repositories" target="_blank" rel="noopener noreferrer" class="font-bold underline">GitHub Repositories.</a>.</p>
+    <div class="project-container ">
+        <!-- Pomodoro Timer -->
+        <div id="project-card">
+            <img src={previewPomodoro} alt="" aria-hidden="true">
+            <div id="card-text">
+                <h3>Pomodoro Timer</h3>
+                <hr>
+                <p>A Pomodoro timer application with a clean and customizable interface and adjustable parameters. Features a set of ambient soundtracks to mix and match for your preferred environment.</p>
+            </div>
+        </div>
+        <!-- Grade Calculator -->
+        <div id="project-card">
+            <img src={previewGradeCalc} alt="" aria-hidden="true">
+            <div id="card-text">
+                <h3>Current & Final Grade Calculator</h3>
+                <hr>
+                <p>Easy-to-use web application intended for students to calculate their current and/or final grades based on known grading criteria. Calculates targeted grades needed to achieve a desired final grade.</p>
+            </div>
+        </div>
+        <!-- Brock Plan 2 Eat -->
+        <div id="project-card">
+            <img src={previewBP2E} alt="" aria-hidden="true">
+            <div id="card-text">
+                <h3>Brock Plan 2 Eat</h3>
+                <hr>
+                <p>An Android app for displaying available food and drink establishments across the Brock University campus. </p>
+            </div>
+        </div>
+        <!-- Android Calculator -->
+        <div id="project-card">
+            <img src={previewAndroidCalc} alt="" aria-hidden="true">
+            <div id="card-text">
+                <h3>Android Calculator</h3>
+                <hr>
+                <p>An Android calculator built in Android Studio. It has a Basic mode that calculates left to right and a Formula mode that follows the standard order of operations, with the result updating as you type.</p>
+            </div>
+        </div>
+        <!-- Portfolio -->
+        <div id="project-card">
+            <img src={previewPortfolio} alt="" aria-hidden="true">
+            <div id="card-text">
+                <h3>Portfolio Website</h3>
+                <hr>
+                <p>The website you are currently viewing! A personal portfolio built with SvelteKit and TailwindCSS to showcase my projects and skills. Intentionally designed to read similarly to a paper-resume.<p>
+            </div>
+        </div>        
+        <!-- Discord Bot -->
+        <div id="project-card">
+            <img src={previewDiscord} alt="" aria-hidden="true">
+            <div id="card-text">
+                <h3>Discord Bot</h3>
+                <hr>
+                <p>A private Discord bot featuring 10+ quality-of-life functions used across multiple servers.</p><br>
+                <p>Built using the 'discord.py' library.</p>
+            </div>
+        </div>
+        <!-- Brock Interactive Training Engineering System -->
+        <div id="project-card">
+            <img src={previewBITES} alt="" aria-hidden="true">
+            <div id="card-text">
+                <h3>Brock Interactive Training Engineering System</h3>
+                <hr>
+                <p>BITES is an interactive learning platform focused on software engineering, designed to keep users engaged and make learning faster and more efficient.</p>
+            </div>
+        </div>
+    </div>
     <br><br>
 
+    <!-- Contact -->
     <h2 class="text-center">CONTACT</h2>
 
 
     <footer class="text-center py-4 mt-4 ">© 2026 Julian Ellis Geronimo</footer>
 </div>
-
-<style>
-    .portrait-image {
-        transition: opacity 500ms ease-in-out;
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-        .portrait-image {
-            transition: none;
-        }
-    }
-</style>
