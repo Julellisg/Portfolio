@@ -363,5 +363,10 @@
         and I will respond as soon as possible.
     </p>
 
-    <footer class="mt-auto pt-8 text-center">© 2026 Julian Ellis Geronimo</footer>
+    <footer>© 2026 Julian Ellis Geronimo • 
+        <a href="https://github.com/Julellisg/Portfolio"
+        target="_blank"
+        class="hover:underline">
+            View Source
+        </a></footer>
 </div>
